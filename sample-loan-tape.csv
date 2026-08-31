@@ -1,0 +1,9 @@
+borrower_name,principal_amount,interest_rate,origination_date,maturity_date
+Aisha Sharma,250000.00,7.25,2024-01-15,2054-01-15
+Rahul Verma,180000.00,6.75,2023-06-01,2043-06-01
+Priya Patel,95000.00,8.10,2025-02-28,2040-02-28
+Invalid Rate,125000.00,35.00,2024-03-10,2044-03-10
+Negative Principal,-5000.00,5.50,2024-04-01,2034-04-01
+Invalid Date Range,200000.00,6.20,2035-01-01,2030-01-01
+,150000.00,7.00,2024-05-20,2044-05-20
+Missing Dates,75000.00,4.80,,

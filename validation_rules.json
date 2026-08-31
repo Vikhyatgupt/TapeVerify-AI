@@ -1,0 +1,7 @@
+{
+  "interestRate": {"min": 0.01, "max": 30.00},
+  "staleAfterDays": 365,
+  "validPaymentStatuses": ["CURRENT", "DELINQUENT", "CLOSED", "PAID_OFF"],
+  "availableDocumentStatuses": ["AVAILABLE", "PENDING", "MISSING", "NOT_AVAILABLE"],
+  "reviewPolicy": "AI output is advisory and may never modify a record without a reviewer action."
+}

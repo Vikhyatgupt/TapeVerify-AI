@@ -1,0 +1,2 @@
+import { money,date } from '../../utils/formatters';
+export default function LoanRowDetail({loan}){return loan?<dl className="grid grid-cols-2 gap-3 text-sm"><div><dt className="label">Principal</dt><dd>{money(loan.principalAmount)}</dd></div><div><dt className="label">Interest</dt><dd>{loan.interestRate ?? '—'}%</dd></div><div><dt className="label">Originated</dt><dd>{date(loan.originationDate)}</dd></div><div><dt className="label">Matures</dt><dd>{date(loan.maturityDate)}</dd></div></dl>:null}

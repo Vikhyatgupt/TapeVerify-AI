@@ -1,0 +1,1 @@
+export default function SuggestedFixCard({suggestion}){return suggestion?<div className="rounded-lg border border-cyan-400/20 bg-cyan-400/5 p-4"><p className="label">AI suggested fix</p><p className="mt-1 text-cyan-100">{suggestion.suggestedValue}</p></div>:null}

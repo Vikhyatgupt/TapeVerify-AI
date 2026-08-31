@@ -1,0 +1,1 @@
+export default function Navbar(){return <header className="mb-8 flex items-center justify-between border-b border-slate-800 pb-4"><span className="text-sm text-slate-400">Secure loan-data workspace</span><span className="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyan-300">Audit mode enabled</span></header>}

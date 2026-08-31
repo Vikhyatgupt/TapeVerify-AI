@@ -1,0 +1,3 @@
+package com.tapeverify.copilot.controller;
+import com.tapeverify.copilot.dto.AiSuggestionDto; import com.tapeverify.copilot.service.AiCopilotService; import org.springframework.web.bind.annotation.*;
+@RestController @RequestMapping("/api/v1/loans") public class ExceptionController { private final AiCopilotService service; public ExceptionController(AiCopilotService service){this.service=service;} @PostMapping("/{id}/exceptions/{exceptionId}/explain") AiSuggestionDto explain(@PathVariable Long id,@PathVariable Long exceptionId){return service.explain(id,exceptionId);} @PostMapping("/{id}/explain") AiSuggestionDto legacyExplain(@PathVariable Long id){return service.explain(id,null);} }

@@ -1,0 +1,12 @@
+node_modules/
+dist/
+target/
+.env
+.env.*
+!.env.example
+*.log
+*.db
+*.sqlite
+.idea/
+.vscode/
+.metadata/

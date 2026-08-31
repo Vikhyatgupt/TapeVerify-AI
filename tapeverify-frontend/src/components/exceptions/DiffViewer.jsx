@@ -1,0 +1,1 @@
+export default function DiffViewer({field,current,suggested}){return <div className="rounded-lg border border-slate-700 p-3 text-sm"><p className="label">{field}</p><p className="mt-2 text-rose-300">Current: {String(current??'—')}</p><p className="text-emerald-300">Suggested: {String(suggested??'—')}</p></div>}

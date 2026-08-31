@@ -1,0 +1,2 @@
+package com.tapeverify.copilot.controller; import com.tapeverify.copilot.dto.AuditLogDto; import com.tapeverify.copilot.service.AuditService; import java.util.*; import org.springframework.web.bind.annotation.*;
+@RestController @RequestMapping("/api/v1/audit") public class ChallengeAuditController {private final AuditService audit;public ChallengeAuditController(AuditService audit){this.audit=audit;}@GetMapping("/{loanId}") public List<AuditLogDto> history(@PathVariable Long loanId){return audit.history(loanId);}}

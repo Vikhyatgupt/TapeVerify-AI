@@ -1,0 +1,1 @@
+export default function BatchSummaryCard({label,value,tone='text-white'}){return <div className="panel"><p className="label">{label}</p><p className={`mt-2 text-3xl font-bold ${tone}`}>{value ?? '—'}</p></div>}

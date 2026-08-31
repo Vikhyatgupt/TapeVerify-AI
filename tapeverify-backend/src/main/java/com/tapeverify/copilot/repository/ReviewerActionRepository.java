@@ -1,0 +1,1 @@
+package com.tapeverify.copilot.repository; import com.tapeverify.copilot.entity.ReviewerAction; import org.springframework.data.jpa.repository.JpaRepository; public interface ReviewerActionRepository extends JpaRepository<ReviewerAction,Long>{java.util.List<ReviewerAction> findByLoanIdOrderByCreatedAtAsc(Long loanId);}

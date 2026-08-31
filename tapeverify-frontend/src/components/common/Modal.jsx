@@ -1,0 +1,1 @@
+export default function Modal({open,onClose,children}){return open?<div className="fixed inset-0 z-50 grid place-items-center bg-slate-950/75 p-4" onMouseDown={onClose}><div className="w-full max-w-xl rounded-2xl border border-slate-700 bg-slate-900 p-6" onMouseDown={e=>e.stopPropagation()}>{children}</div></div>:null}

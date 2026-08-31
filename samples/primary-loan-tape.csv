@@ -1,0 +1,5 @@
+loan_id,borrower_id,borrower_name,loan_type,origination_date,maturity_date,original_principal,current_balance,interest_rate,term_months,borrower_state,loan_purpose,credit_grade,employment_length,income_band,payment_status,days_past_due,servicer_name,last_payment_date,last_updated_at,document_status,source_system
+LN-1001,BR-001,Asha Sharma,TERM,2024-01-15,2029-01-15,"250,000",200000,6.5%,60,CA,HOME_IMPROVEMENT,A,5 years,75K-100K,CURRENT,0,Demo Servicing,2026-08-01,2026-08-20T09:00:00,AVAILABLE,ORIGINATION
+LN-1002,BR-002,Rohan Mehta,TERM,2025-04-01,2024-04-01,150000,160000,35,48,ZZ,DEBT_CONSOLIDATION,B,2 years,50K-75K,CURRENT,15,Demo Servicing,2026-07-01,2024-01-01T09:00:00,,ORIGINATION
+LN-1001,BR-003,Duplicate ID,TERM,2025-01-01,2030-01-01,100000,90000,7.25,60,TX,HOME_IMPROVEMENT,A,3 years,100K-150K,CURRENT,0,Demo Servicing,2026-08-01,2026-08-20T09:00:00,AVAILABLE,ORIGINATION
+LN-1004,BR-004,Malformed Example,TERM,not-a-date,2030-01-01,abc,0,5.0,60,NY,OTHER,C,1 year,Under 50K,CLOSED,0,Demo Servicing,2026-08-01,2026-08-20T09:00:00,AVAILABLE,ORIGINATION

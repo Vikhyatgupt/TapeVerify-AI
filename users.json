@@ -1,0 +1,5 @@
+[
+  {"username":"operator-demo","role":"OPERATOR","purpose":"Upload and monitor imports"},
+  {"username":"reviewer-demo","role":"REVIEWER","purpose":"Resolve exceptions and verify loans"},
+  {"username":"consumer-demo","role":"DATA_CONSUMER","purpose":"Read verified records and exports"}
+]

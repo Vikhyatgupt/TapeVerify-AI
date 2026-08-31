@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: tapeverify-backend
+  datasource:
+    # Set DB_URL, DB_USER, and DB_PASS for your local MySQL installation.
+    # The compose.yaml configuration supplies these automatically for Docker.
+    url: ${DB_URL:jdbc:mysql://localhost:3306/tapeverify?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&autoReconnect=true}
+    username: ${DB_USER}
+    password: ${DB_PASS}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: 10000
+      validation-timeout: 5000
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+  flyway:
+    enabled: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  ai:
+    # Keep local development usable without an OpenAI key. The `ai` profile enables
+    # the OpenAI chat model; without it, the copilot returns rule-based suggestions.
+    model:
+      chat: none
+      embedding: none
+      image: none
+      audio:
+        transcription: none
+        speech: none
+      moderation: none
+server:
+  port: ${PORT:8080}
+  error:
+    include-message: never
+management:
+  endpoints.web.exposure.include: health,info
+  endpoint.health.show-details: never
+app:
+  jwt:
+    # Set JWT_SECRET to a base64-encoded 32-byte value outside source control.
+    secret: ${JWT_SECRET:}
+    expiration-minutes: ${JWT_EXPIRATION_MINUTES:480}
+  cors-origins: ${CORS_ORIGINS:http://localhost:5173}
+  bootstrap-admin:
+    username: ${BOOTSTRAP_ADMIN_USERNAME:}
+    password: ${BOOTSTRAP_ADMIN_PASSWORD:}

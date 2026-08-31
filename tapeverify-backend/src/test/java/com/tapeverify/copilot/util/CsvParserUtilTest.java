@@ -1,0 +1,3 @@
+package com.tapeverify.copilot.util;
+import static org.junit.jupiter.api.Assertions.*; import java.io.*; import org.junit.jupiter.api.Test;
+class CsvParserUtilTest { @Test void normalizesAliasesCurrencyPercentAndMalformedDatePerRow(){String csv="borrower,principal,rate,origination_date,maturity_date\n  Ada  Lovelace ,\"$1,200.50\",7.5%,01/02/2024,2025-01-02\nBob,not-money,3,2024-01-01,bad-date";var rows=CsvParserUtil.parse(new ByteArrayInputStream(csv.getBytes()));assertEquals(2,rows.size());assertEquals("Ada Lovelace",rows.get(0).borrowerName());assertEquals("1200.50",rows.get(0).principalAmount().toPlainString());assertFalse(rows.get(1).parseIssues().isEmpty());assertEquals(2,rows.get(1).parseIssues().size());}}

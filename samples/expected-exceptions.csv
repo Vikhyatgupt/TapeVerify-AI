@@ -1,0 +1,6 @@
+loan_id,field,severity,expected_message
+LN-1002,maturityDate,HIGH,Maturity date must be after origination date
+LN-1002,currentBalance,HIGH,Current balance cannot exceed original principal
+LN-1002,borrowerState,ERROR,State must be a valid US state or DC code
+LN-1004,originationDate,ERROR,Malformed date
+LN-1004,principalAmount,HIGH,Malformed amount

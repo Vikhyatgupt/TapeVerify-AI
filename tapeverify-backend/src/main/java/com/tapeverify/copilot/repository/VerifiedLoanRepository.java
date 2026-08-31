@@ -1,0 +1,1 @@
+package com.tapeverify.copilot.repository; import com.tapeverify.copilot.entity.VerifiedLoan; import java.util.*; import org.springframework.data.jpa.repository.JpaRepository; public interface VerifiedLoanRepository extends JpaRepository<VerifiedLoan,Long>{Optional<VerifiedLoan> findByLoanId(Long loanId);}

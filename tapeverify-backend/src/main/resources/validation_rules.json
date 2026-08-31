@@ -1,0 +1,6 @@
+{
+  "interestRate": {"min": 0.01, "max": 30.00},
+  "staleAfterDays": 365,
+  "validPaymentStatuses": ["CURRENT", "DELINQUENT", "CLOSED", "PAID_OFF"],
+  "availableDocumentStatuses": ["AVAILABLE", "PENDING", "MISSING", "NOT_AVAILABLE"]
+}

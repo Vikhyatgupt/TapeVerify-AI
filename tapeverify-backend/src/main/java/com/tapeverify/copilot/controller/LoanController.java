@@ -1,0 +1,3 @@
+package com.tapeverify.copilot.controller;
+import com.tapeverify.copilot.dto.*; import com.tapeverify.copilot.service.LoanService; import java.util.*; import jakarta.validation.Valid; import org.springframework.web.bind.annotation.*;
+@RestController @RequestMapping("/api/v1/loans") public class LoanController { private final LoanService service; public LoanController(LoanService service){this.service=service;} @GetMapping List<LoanDto> all(){return service.all();} @GetMapping("/exceptions") List<LoanDto> exceptions(){return service.exceptions();} @GetMapping("/{id}") LoanDto get(@PathVariable Long id){return service.find(id);}@PatchMapping("/{id}/resolve") LoanDto resolve(@PathVariable Long id,@Valid @RequestBody ResolveDto dto){return service.resolve(id,dto);} }

@@ -1,0 +1,12 @@
+ALTER TABLE loans ADD COLUMN source_loan_id VARCHAR(128) NULL AFTER batch_id;
+ALTER TABLE loans ADD COLUMN borrower_id VARCHAR(128) NULL AFTER borrower_name;
+ALTER TABLE loans ADD COLUMN current_balance DECIMAL(15,2) NULL AFTER principal_amount;
+ALTER TABLE loans ADD COLUMN payment_status VARCHAR(32) NULL AFTER interest_rate;
+ALTER TABLE loans ADD COLUMN days_past_due INT NULL AFTER payment_status;
+ALTER TABLE loans ADD COLUMN borrower_state VARCHAR(8) NULL AFTER days_past_due;
+ALTER TABLE loans ADD COLUMN document_status VARCHAR(64) NULL AFTER borrower_state;
+ALTER TABLE loans ADD COLUMN last_updated_at DATETIME NULL AFTER document_status;
+ALTER TABLE loans ADD COLUMN source_system VARCHAR(128) NULL AFTER last_updated_at;
+CREATE INDEX idx_loans_source_loan ON loans(source_loan_id);
+CREATE TABLE verified_loans (id BIGINT AUTO_INCREMENT PRIMARY KEY, loan_id BIGINT NOT NULL UNIQUE, verified_by VARCHAR(128) NOT NULL, verified_at DATETIME NOT NULL, decision VARCHAR(32) NOT NULL, canonical_details LONGTEXT NOT NULL, record_hash VARCHAR(64) NOT NULL, CONSTRAINT fk_verified_loan FOREIGN KEY (loan_id) REFERENCES loans(id));
+CREATE TABLE reviewer_actions (id BIGINT AUTO_INCREMENT PRIMARY KEY, loan_id BIGINT NOT NULL, exception_id BIGINT NULL, action VARCHAR(32) NOT NULL, comment_text TEXT NULL, actor VARCHAR(128) NOT NULL, created_at DATETIME NOT NULL, CONSTRAINT fk_reviewer_loan FOREIGN KEY (loan_id) REFERENCES loans(id), CONSTRAINT fk_reviewer_exception FOREIGN KEY (exception_id) REFERENCES validation_exceptions(id));
